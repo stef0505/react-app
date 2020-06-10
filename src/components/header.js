@@ -1,33 +1,23 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import { Navbar, Nav, NavDropdown, NavItem } from 'react-bootstrap';
 
 const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </div>
+  <header>
+          {/* {siteTitle} */}
+          <Navbar>
+  <Navbar.Brand href="/">{siteTitle}</Navbar.Brand>
+  <Navbar.Toggle aria-controls="navbarResponsive" />
+  <Navbar.Collapse id="navbarResponsive">
+    <Nav as="ul">
+      <Nav.Item as="li">
+        <Link to="/page-2" className="nav-link" activeClassName="active">Page 2</Link>
+      </Nav.Item>
+    </Nav>
+  </Navbar.Collapse>
+</Navbar>
+  </header>
+  
 )
 
 export default Header
